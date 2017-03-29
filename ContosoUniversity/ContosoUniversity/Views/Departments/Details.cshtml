@@ -1,0 +1,40 @@
+@model ContosoUniversity.Models.Department
+
+@{
+    ViewData["Title"] = "Department Details";
+}
+
+<h2>Department Details</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Budget)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Budget)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Administrator)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Administrator.FullName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DepartmentID">Edit Department</a> |
+    <a asp-action="Index">Back to All Departments</a>
+</div>

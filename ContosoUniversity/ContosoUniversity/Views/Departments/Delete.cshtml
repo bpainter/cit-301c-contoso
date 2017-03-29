@@ -1,0 +1,47 @@
+@model ContosoUniversity.Models.Department
+
+@{
+    ViewData["Title"] = "Delete Department";
+}
+
+<h2>Delete Department</h2>
+
+<p class="text-danger">@ViewData["ConcurrencyErrorMessage"]</p>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Budget)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Budget)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Administrator)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Administrator.FullName)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="DepartmentID" />
+        <input type="hidden" asp-for="RowVersion" />
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete Department" class="btn btn-default" /> |
+            <a asp-action="Index">Back to All Departments</a>
+        </div>
+    </form>
+</div>

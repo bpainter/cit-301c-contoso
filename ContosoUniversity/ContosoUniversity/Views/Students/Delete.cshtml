@@ -1,0 +1,40 @@
+@model ContosoUniversity.Models.Student
+
+@{
+    ViewData["Title"] = "Delete Student";
+}
+
+<h2>Delete Student</h2>
+<p class="text-danger">@ViewData["ErrorMessage"]</p>
+
+<div>
+
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="ID" />
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstMidName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstMidName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EnrollmentDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EnrollmentDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete Student" class="btn btn-default" /> |
+            <a asp-action="Index">Back to All Students</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+@model ContosoUniversity.Models.Instructor
+
+@{
+    ViewData["Title"] = "Delete Instructor";
+}
+
+<h2>Delete Instructor</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="ID" />
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstMidName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstMidName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HireDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HireDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete Instructor" class="btn btn-default" /> |
+            <a asp-action="Index">Back to All Instructors</a>
+        </div>
+    </form>
+</div>
